@@ -14,14 +14,9 @@ int main()
     for(short index = 0; index < sizeof (binArray) - 1; index++)//последний элемент всегда имеет код 0, его можно не проверять
     {
         short temp{static_cast<short>(buffer[index])};//берем код символа
-        if(((temp >= a)&&(temp <= z) )||((temp >= A)&&(temp <=Z)))//если код принадлежит ОДЗ
-        {
+        if(((temp >= a)&&(temp <= z) )||((temp >= A)&&(temp <=Z)))//если код символа принадлежит ОДЗ
             binArray[index] = true;
-        }
-        else
-        {
-            binArray[index] = false;
-        }
+        else binArray[index] = false;
     }
     for(short index = 0; index < sizeof (binArray) - 1; index++)
     {
@@ -29,6 +24,6 @@ int main()
             binArray[index]=0;//обращаем одни из них в 0
         wordCounter+=binArray[index];//сложим элементы массива
     }
-    std::cout<<"There are "<<wordCounter<<" words in the line\n";
+    std::cout<<wordCounter;
 }
 
